@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-square',
   template: `
-  <p>square works!
-  
-  {{rando}}
-  </p>
+    <button>{{ value }} {{rando}}</button>
   `,
   styles: []
 })
 export class SquareComponent {
+
+  @Input() value : 'X' | 'O';
+
   rando = Math.random();
 
   constructor() { 
